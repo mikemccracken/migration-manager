@@ -44,7 +44,10 @@ When using the flasher tool, the access configuration for Migration Manager can 
 Example Migration Manager seed:
 
     trusted_client_certificates:
-      - e385d0e91509d33f0a3ff2d5993bd1fc6e6265140b5f11b7e3d20801480e3fbf
+      - |
+        -----BEGIN CERTIFICATE-----
+        ...
+        -----END CERTIFICATE-----
     preseed:
       system_network:
         rest_server_address: '192.0.2.100:443'
