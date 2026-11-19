@@ -33,7 +33,7 @@ See [Events](events) for more information about logging events.
 
 | Configuration         | Description                                                                                | Value(s)         | Default                       |
 | :---                  | :---                                                                                       | :---             | :---                          |
-| `rest_server_address` | Address/port over which the REST API will be served                                        | address:port     | `*:6443`                      |
+| `rest_server_address` | Address/port over which the REST API will be served                                        | address:port     | none (no network listener)    |
 | `worker_endpoint`     | Address that migrating instances will use to connect back to the Migration Manager service | https:\/\/address  | same as `rest_server_address` |
 
 ## Security Settings
@@ -54,7 +54,7 @@ See [Events](events) for more information about logging events.
 | :---          | :---                                                       | :---     | :---    |
 | `issuer`      | OIDC issuer                                                | string   |         |
 | `client_id`   | OIDC client ID used for communication with OIDC issuer     | string   |         |
-| `scope`       | Scopes to be requested                                     | string   |         |
+| `scopes`      | Scopes to be requested                                     | string   |         |
 | `audience`    | Audience the OIDC tokens should be verified against        | string   |         |
 | `claim`       | Claim which should be used to identify the user or subject | string   |         |
 
