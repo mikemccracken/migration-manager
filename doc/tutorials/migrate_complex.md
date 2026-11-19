@@ -203,7 +203,7 @@ In the above example, the `Target Network` for the ESXi network `/ha-datacenter/
     nictype: "managed"
     vlan_id: ""
 
-    $ migration-manager network edit 52d5cfe0-d341-82d9-3f23-4149687b4e3e
+    $ migration-manager network edit d56fcf64-1669-4c85-bffc-c9845676add6
     ### This is a YAML representation of network configuration.
     ### Any line starting with a '# will be ignored.
     ###
@@ -234,7 +234,7 @@ Inspect the networks again to see the change:
     +--------------------------------------+--------------------+-------------------------------+-----------+----------+----------------+-----------------+-------------+
     | 8df4f8e3-b446-4631-87a8-f7f97fce3109 | HaNetwork-VMWARE   | /ha-datacenter/network/VMWARE | esxi01    | standard | incusbr0       | managed         |             |
     +--------------------------------------+--------------------+-------------------------------+-----------+----------+----------------+-----------------+-------------+
-    | d56fcf64-1669-4c85-bffc-c9845676add6 | network-40007      | /vc01/network/VMNET           | vcenter01 | standard | br0            | bridged         | 30          |
+    | d56fcf64-1669-4c85-bffc-c9845676add6 | network-40007      | /vc01/network/VMNET           | vcenter01 | standard | br0            | bridged         | 10          |
     +--------------------------------------+--------------------+-------------------------------+-----------+----------+----------------+-----------------+-------------+
 
 ````
