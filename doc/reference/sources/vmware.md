@@ -93,7 +93,7 @@ By default, migrations will expect the same network name to be present on the mi
 All of the properties available for ESXi sources are also available for vCenter sources, with some additions:
 
 * Tags (Imported as the `tags` instance property, and applied to migrated instances as `user.tags.{index}.{category}={tag}` config keys)
-* Resource pools (Imported as key-value config with the prefix `vmware.resource_pool.`)
+* Resource pools (Imported as the `vmware.resource_pool` config key, with the resource pool name as the value)
 * NSX manager sources will be auto-imported by their IP addresses. Credentials will not be assigned by default.
 
 ### Required permissions
