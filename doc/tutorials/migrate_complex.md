@@ -116,19 +116,21 @@ This suggests the VMware guest agent tools were not installed on the VM. We can 
     ### Any line starting with a '# will be ignored.
     ###
 
+    incus_agent: null
+    name: ""
+    cpus: 0
+    memory: 0
+    config: {}
+    architecture: ""
     last_update: 2025-11-18T23:53:11.068675129Z
     comment: "Override OS and OS version (no VMware guest agent)"
+    os_type: linux
+    distribution: ubuntu
+    distribution_version: "24.04"
     disable_migration: false
     ignore_restrictions: false
-    properties:
-        name: ""
-        description: ""
-        cpus: 0
-        memory: 0
-        config: {}
-        os: "Ubuntu"
-        os_version: "Ubuntu 24.04 (Noble)"
-        architecture: ""
+    started_after_migration: false
+    stopped_after_migration: false
 
 The instance list should now reflect the change:
 
