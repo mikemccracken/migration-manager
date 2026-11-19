@@ -78,7 +78,7 @@ The underlying networks in use by instance NICs will be recorded as well. These 
 | `standard`        | standard virtual switches    |
 | `distributed`     | distributed virtual switches |
 | `nsx`             | NSX-backed switches          |
-| `distributed-nsx` | VLAN-backed NSX switches     |
+| `nsx-distributed` | VLAN-backed NSX switches     |
 
 #### Overrides
 
