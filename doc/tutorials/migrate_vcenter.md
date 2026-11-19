@@ -106,8 +106,8 @@ Now we can create a batch of instances to be migrated, and set up the migration 
     include_expression: "(has_tag('category_1', 'mytag') or config['vmware.resource_pool'] == 'Windows') and location matches '/Incus migrations/'"
     migration_windows:
       - name: window1
-        start: 2025-12-01 01:00:00
-        end: 2025-12-01 01:10:00
+        start: 2030-12-01 01:00:00
+        end: 2030-12-01 01:10:00
     constraints: []
     defaults:
         placement:

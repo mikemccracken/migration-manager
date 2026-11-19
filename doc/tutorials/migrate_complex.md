@@ -275,11 +275,11 @@ We can create some batches with more complex parameters. Here we will create two
     include_expression: "location matches '/Incus migrations/' and source == 'vcenter01'"
     migration_windows:
       - name: window1
-        start: 2025-12-01 01:00:00
-        end: 2025-12-01 01:10:00
+        start: 2030-12-01 01:00:00
+        end: 2030-12-01 01:10:00
       - name: window2
-        start: 2025-12-01 01:00:00
-        end: 2025-12-01 03:00:00
+        start: 2030-12-01 01:00:00
+        end: 2030-12-01 03:00:00
     constraints:
       - name: constraint1
         description: Background import requires at least 1 hour windows (window2)
@@ -337,11 +337,11 @@ We can create some batches with more complex parameters. Here we will create two
     include_expression: "background_import"
     migration_windows:
       - name: window1
-        start: 2025-12-01 01:00:00
-        end: 2025-12-01 01:10:00
+        start: 2030-12-01 01:00:00
+        end: 2030-12-01 01:10:00
       - name: window2
-        start: 2025-12-01 02:00:00
-        end: 2025-12-01 02:10:00
+        start: 2030-12-01 02:00:00
+        end: 2030-12-01 02:10:00
     constraints:
       - name: constraint1
         description: Migrate esxi01 VMs one at a time
@@ -432,11 +432,11 @@ Starting `batch01` first will make it claim `Ubuntu 2404` and `Cent OS 9 UEFI`:
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
     |     Name       |  Batch  | Last Update |               Status               |                              Status Message                                |                       Migration Window                        |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | CentOS9UEFI    | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 3.00% complete | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | CentOS9UEFI    | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 3.00% complete | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | DebianBookworm | batch01 | 4s ago      | Blocked                            | Background import is not supported                                         | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 03:00:00 +0000 UTC |
+    | DebianBookworm | batch01 | 4s ago      | Blocked                            | Background import is not supported                                         | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 03:00:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | Ubuntu2404     | batch01 | 4s ago      | Blocked                            | Could not determine instance IP, check if guest agent is running           | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | Ubuntu2404     | batch01 | 4s ago      | Blocked                            | Could not determine instance IP, check if guest agent is running           | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
 
 ````
@@ -465,11 +465,11 @@ Additionally, from earlier, we know `Debian Bookworm` did not have background im
     include_expression: "(location matches '/Incus migrations/' and source == 'vcenter01'"
     migration_windows:
       - name: window1
-        start: 2025-12-01 01:00:00
-        end: 2025-12-01 01:10:00
+        start: 2030-12-01 01:00:00
+        end: 2030-12-01 01:10:00
       - name: window2
-        start: 2025-12-01 01:00:00
-        end: 2025-12-01 02:00:00
+        start: 2030-12-01 01:00:00
+        end: 2030-12-01 02:00:00
     constraints: []
     defaults:
         placement:
@@ -511,11 +511,11 @@ Then the queue will automatically update:
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
     |     Name       |  Batch  | Last Update |               Status               |                              Status Message                                |                       Migration Window                        |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | CentOS9UEFI    | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 6.00% complete | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | CentOS9UEFI    | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 6.00% complete | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | DebianBookworm | batch01 | 4s ago      | Idle                               | Waiting for migration window                                               | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 03:00:00 +0000 UTC |
+    | DebianBookworm | batch01 | 4s ago      | Idle                               | Waiting for migration window                                               | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 03:00:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | Ubuntu2404     | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Ubuntu/Ubuntu.vmdk": 1.00% complete   | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | Ubuntu2404     | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Ubuntu/Ubuntu.vmdk": 1.00% complete   | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
 
 ````
@@ -543,17 +543,17 @@ Now we can start `batch02`:
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
     |     Name       |  Batch  | Last Update |               Status               |                              Status Message                                |                       Migration Window                        |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | CentOS9        | batch02 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 1.00% complete | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | CentOS9        | batch02 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 1.00% complete | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | CentOS9UEFI    | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 9.00% complete | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | CentOS9UEFI    | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 9.00% complete | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | DebianBookworm | batch01 | 4s ago      | Idle                               | Waiting for migration window                                               | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 03:00:00 +0000 UTC |
+    | DebianBookworm | batch01 | 4s ago      | Idle                               | Waiting for migration window                                               | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 03:00:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | SuseUEFI       | batch02 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Suse/Suse.vmdk": 1.00% complete       | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | SuseUEFI       | batch02 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Suse/Suse.vmdk": 1.00% complete       | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | Ubuntu2404     | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Ubuntu/Ubuntu.vmdk": 3.00% complete   | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | Ubuntu2404     | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Ubuntu/Ubuntu.vmdk": 3.00% complete   | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | Win2016        | batch02 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Win2016/Win2016.vmdk": 3.00% complete | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | Win2016        | batch02 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Win2016/Win2016.vmdk": 3.00% complete | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +----------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
 
 ````

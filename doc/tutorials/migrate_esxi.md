@@ -185,8 +185,8 @@ Now we can create a batch of instances to be migrated, and set up the migration 
     include_expression: "(location matches 'Win2016' or location matches 'CentOS') and len(disks) == 1"
     migration_windows:
       - name: window1
-        start: 2025-12-01 01:00:00
-        end: 2025-12-01 01:10:00
+        start: 2030-12-01 01:00:00
+        end: 2030-12-01 01:10:00
     constraints: []
     defaults:
         placement:
@@ -256,9 +256,9 @@ Finally, the migration has completed! The source VM will have powered off, and t
     +--------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
     |     Name     |  Batch  | Last Update |               Status               |                              Status Message                                |                       Migration Window                        |
     +--------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | CentOS9UEFI  | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 3.00% complete | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | CentOS9UEFI  | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] CentOS9/CentOS9.vmdk": 3.00% complete | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +--------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
-    | Win2016      | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Win2016/Win2016.vmdk": 1.00% complete | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | Win2016      | batch01 | 4s ago      | Performing background import tasks | Importing disk (1/1) "[datastore-01] Win2016/Win2016.vmdk": 1.00% complete | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +--------------+---------+-------------+------------------------------------+----------------------------------------------------------------------------+---------------------------------------------------------------+
 
 After background import is complete, the migration will halt temporarily until the migration window starts. Periodically, data will be topped up without shutting off the source VM.
@@ -267,9 +267,9 @@ After background import is complete, the migration will halt temporarily until t
     +--------------+---------+-------------+--------+------------------------------+---------------------------------------------------------------+
     |     Name     |  Batch  | Last Update | Status |        Status Message        |                       Migration Window                        |
     +--------------+---------+-------------+--------+------------------------------+---------------------------------------------------------------+
-    | CentOS9UEFI  | batch01 | 4s ago      | Idle   | Waiting for migration window | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | CentOS9UEFI  | batch01 | 4s ago      | Idle   | Waiting for migration window | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +--------------+---------+-------------+--------+------------------------------+---------------------------------------------------------------+
-    | Win2016      | batch01 | 4s ago      | Idle   | Waiting for migration window | 2025-12-01 01:00:00 +0000 UTC - 2025-12-01 01:10:00 +0000 UTC |
+    | Win2016      | batch01 | 4s ago      | Idle   | Waiting for migration window | 2030-12-01 01:00:00 +0000 UTC - 2030-12-01 01:10:00 +0000 UTC |
     +--------------+---------+-------------+--------+------------------------------+---------------------------------------------------------------+
 
 Finally, the migration has completed! The source VM will have powered off, and the target instance should now be running:
