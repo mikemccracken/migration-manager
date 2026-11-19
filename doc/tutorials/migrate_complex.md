@@ -247,7 +247,7 @@ We can create some batches with more complex parameters. Here we will create two
 
 - `batch01`:
    - Match all instances under folder `Incus migrations` on `vcenter01`
-   - Migrate instances to target `incus01` unless their OS version is `CentOS`, in which case migrate them to `incus02`
+   - Migrate instances to target `incus01` unless their distribution is `CentOS`, in which case migrate them to `incus02`
    - Top-up background imports every 1 hour
    - Add a constraint where systems without background import require windows at least 1 hour long
 
@@ -293,7 +293,7 @@ We can create some batches with more complex parameters. Here we will create two
         rerun_scriptlets: false
         placement_scriptlet: |
             def placement(instance, batch):
-                if instance.os_version.startswith("CentOS"):
+                if instance.distribution == "centos":
                     set_target("incus02")
         post_migration_retries: 5
         instance_restriction_overrides:
@@ -479,7 +479,7 @@ Additionally, from earlier, we know `Debian Bookworm` did not have background im
         rerun_scriptlets: false
         placement_scriptlet: |
             def placement(instance, batch):
-                if instance.os_version.startswith("CentOS"):
+                if instance.distribution == "centos":
                     set_target("incus02")
         post_migration_retries: 5
         instance_restriction_overrides:
